@@ -13,6 +13,12 @@
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "sinon": "^7.2.3",
-    "sinon-chai": "^3.3.0"
+    "sinon-chai": "^3.3.0",
+    "webpack": "^4.29.4",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
   }
 }
