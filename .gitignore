@@ -1,2 +1,8 @@
+# Artifacts
+dist/
+
+# Node
 node_modules/
+
+# tmp
 **/*.swp
