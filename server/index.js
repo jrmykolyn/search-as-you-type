@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
 
   const data = new Array(Math.ceil(Math.random() * 5))
     .fill(null)
-    .map(utils.getMockSuggestion);
+    .map(() => utils.getMockSuggestion(decodeURIComponent(segments[1])));
 
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.end(JSON.stringify(data));

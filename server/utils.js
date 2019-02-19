@@ -18,16 +18,18 @@ const getMockDepartment = () => {
 
 const getMockSuggestion = (term) => {
   return {
-    term: getMockTerm(),
+    term: getMockTerm(term),
     in: getMockDepartment(),
   };
 };
 
-const getMockTerm = () => {
-  return new Array(getTermLength())
+const getMockTerm = (term) => {
+  const mockTerm = new Array(getTermLength())
     .fill(null)
     .map(getMockWord)
     .join(' ');
+
+  return term + mockTerm.substring(term.length);
 }
 
 const getMockWord = () => {
