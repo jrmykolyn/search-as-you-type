@@ -1,5 +1,9 @@
 const React = require('react');
 const Suggestions = require('./Suggestions.jsx');
+const config = require('../../config');
+const { api } = config;
+
+const API_URL = `${api.protocol}${api.host}:${api.port}/${api.path}`;
 
 class Search extends React.Component {
   constructor(props) {
@@ -39,13 +43,8 @@ class Search extends React.Component {
   }
 
   fetchSuggestions(term) {
-    return new Promise((resolve, reject) => {
-      resolve([
-        { term: 'Foo' },
-        { term: 'Bar' },
-        { term: 'Baz' },
-      ]);
-    });
+    return window.fetch(`${API_URL}/${term}`)
+      .then((response) => response.json());
   }
 }
 
