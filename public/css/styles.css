@@ -54,3 +54,21 @@ li {
 li:not(:first-child) {
   border-top: solid 0.1rem #f0f0f0;
 }
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.suggestion-text {
+  color: #AAA;
+}
+
+.suggestion-text__term {
+  color: #222;
+}
+
+.suggestion-text__department {
+  color: #222;
+  text-decoration: underline;
+}
