@@ -1,11 +1,11 @@
 const http = require('http');
-const PORT = 8080;
+const config = require('../config');
 const utils = require('./utils');
 
 const server = http.createServer((req, res) => {
   const segments = req.url.split('/').filter((segment) => !!segment);
 
-  if (!segments.length || segments[0] !== 'search') {
+  if (!segments.length || segments[0] !== config.api.path) {
     res.end('');
     return;
   }
@@ -18,4 +18,4 @@ const server = http.createServer((req, res) => {
   res.end(JSON.stringify(data));
 });
 
-server.listen(PORT, () => console.log('LISTENING ON PORT', PORT));
+server.listen(config.api.port, () => console.log('LISTENING ON PORT', config.api.port));
