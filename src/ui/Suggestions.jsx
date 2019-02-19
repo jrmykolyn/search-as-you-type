@@ -1,4 +1,5 @@
 const React = require('react');
+const Suggestion = require('./Suggestion.jsx');
 
 class Suggestions extends React.Component {
   render() {
@@ -6,7 +7,7 @@ class Suggestions extends React.Component {
       <ul className="suggestions">
         {
           (this.props.suggestions || []).map((el, i) => {
-            return <li key={ `suggestion-${i}`}>{ el.term }</li>;
+            return <Suggestion key={ `suggestion-${i}` } suggestion={ el } />
           })
         }
       </ul>
