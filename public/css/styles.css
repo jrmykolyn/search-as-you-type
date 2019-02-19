@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  padding: 2rem;
+  font-size: 1.6rem;
+  color: #222;
+  background: #f0f0f0;
+}
+
+main {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 60rem;
+}
+
+input {
+  width: 100%;
+  padding: 0 2rem;
+  color: #444;
+  box-shadow: 0 0.3rem 2rem -0.3rem rgba(0, 0, 0, 0.25);
+  border: 0;
+  font-size: 1.4rem;
+  line-height: 4.4rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: #444;
+  background: #fff;
+  box-shadow: 0 0.3rem 2rem -0.3rem rgba(0, 0, 0, 0.25);
+}
+
+li {
+  padding: 1rem 2rem;
+}
+
+li:not(:first-child) {
+  border-top: solid 0.1rem #f0f0f0;
+}
