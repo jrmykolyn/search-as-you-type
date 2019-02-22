@@ -1,5 +1,6 @@
 # Artifacts
 dist/
+public/js/
 
 # Node
 node_modules/
