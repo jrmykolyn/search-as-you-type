@@ -1,5 +1,5 @@
 const React = require('react');
-const Suggestions = require('./Suggestions.jsx');
+const Options = require('./Options.jsx');
 const config = require('../../config');
 const { api } = config;
 
@@ -16,16 +16,19 @@ class Search extends React.Component {
       suggestions: [],
     };
 
-
     // Bind
     this.onChange = this.onChange.bind(this);
   }
 
   render() {
+    const options = this.state.suggestions.length
+      ? <Options suggestions={ this.state.suggestions } />
+      : '';
+
     return (
       <div>
         <input type="text" onChange={ this.onChange } />
-        <Suggestions suggestions={ this.state.suggestions } />
+        { options }
       </div>
     );
   }
