@@ -3,7 +3,7 @@ const Suggestions = require('./Suggestions.jsx');
 const config = require('../../config');
 const { api } = config;
 
-const API_URL = `${api.protocol}${api.host}:${api.port}/${api.path}`;
+const API_URL = api.getApiUrl();
 
 class Search extends React.Component {
   constructor(props) {
