@@ -19,7 +19,7 @@ class Search extends React.Component {
     };
 
     // Bind
-    this.clearSuggestions = this.clearSuggestions.bind(this);
+    this.clear = this.clear.bind(this);
     this.onChange = this.onChange.bind(this);
   }
 
@@ -30,7 +30,7 @@ class Search extends React.Component {
 
     return (
       <div>
-        <Input query={ this.state.query } onChange={ this.onChange } onClick={ this.clearSuggestions } />
+        <Input query={ this.state.query } onChange={ this.onChange } onClick={ this.clear } />
         { options }
       </div>
     );
@@ -50,8 +50,8 @@ class Search extends React.Component {
     }
   }
 
-  clearSuggestions() {
-    this.setState({ suggestions: [] });
+  clear() {
+    this.setState({ suggestions: [], query: '' });
   }
 
   fetchSuggestions(term) {
