@@ -15,6 +15,7 @@ class Search extends React.Component {
     this.state = {
       ...this.state,
       suggestions: [],
+      query: '',
     };
 
     // Bind
@@ -29,13 +30,15 @@ class Search extends React.Component {
 
     return (
       <div>
-        <Input onChange={ this.onChange } onClick={ this.clearSuggestions } />
+        <Input query={ this.state.query } onChange={ this.onChange } onClick={ this.clearSuggestions } />
         { options }
       </div>
     );
   }
 
   onChange(e) {
+    this.setState({ query: e.target.value });
+
     if (e.target.value.length >= this.minChars) {
       this.fetchSuggestions(e.target.value)
         .then((response) => {
