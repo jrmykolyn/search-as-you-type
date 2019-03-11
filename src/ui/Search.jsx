@@ -29,7 +29,7 @@ class Search extends React.Component {
       : '';
 
     return (
-      <div>
+      <div className="search">
         <Input query={ this.state.query } onChange={ this.onChange } onClick={ this.clear } />
         { options }
       </div>

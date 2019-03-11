@@ -7,10 +7,12 @@ const PUBLIC_DIR = `${__dirname}/../public`;
 
 const server = http.createServer((req, res) => {
   try {
-    const segments = req.url.split('/').filter((segment) => !!segment);
+    const [path] = req.url.split('?');
+
+    const segments = path.split('/').filter((segment) => !!segment);
 
     if (!segments.length || segments[0] !== config.api.getPath()) {
-      const filepath = req.url === '/'
+      const filepath = path === '/'
         ? '/index.html'
         : req.url;
 

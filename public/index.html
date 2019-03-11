@@ -7,8 +7,25 @@
   </head>
   <body>
     <main>
-      <div id="root"></div>
     </main>
+    <script>
+      (() => {
+        // Generate 'target' nodes using `fields` query string parameter.
+        const mainElem = document.querySelector('main');
+        const queryString = window.location.search || '';
+        const queryStringData = queryString.substr(1).split('&')
+          .map((pair) => pair.split('='))
+          .map(([key, value]) => ({ [key]: value }))
+          .reduce((acc, o) => ({ ...acc, ...o }), {});
+        const numFields = +queryStringData.fields || 1;
+
+        for (let i = 0; i < numFields; i++) {
+          const elem = document.createElement('div');
+          elem.classList.add('target');
+          mainElem.appendChild(elem);
+        }
+      })();
+    </script>
     <script src="js/main.js"></script>
   </body>
 </html>

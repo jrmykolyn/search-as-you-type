@@ -54,6 +54,10 @@ img {
   display: block;
 }
 
+.search {
+  margin-bottom: 4rem;
+}
+
 .options {
   display: flex;
   flex-direction: row;
