@@ -18,6 +18,7 @@ class Search extends React.Component {
     };
 
     // Bind
+    this.clearSuggestions = this.clearSuggestions.bind(this);
     this.onChange = this.onChange.bind(this);
   }
 
@@ -28,7 +29,7 @@ class Search extends React.Component {
 
     return (
       <div>
-        <Input onChange={ this.onChange } />
+        <Input onChange={ this.onChange } onClick={ this.clearSuggestions } />
         { options }
       </div>
     );
@@ -44,6 +45,10 @@ class Search extends React.Component {
           console.error(e.message);
         });
     }
+  }
+
+  clearSuggestions() {
+    this.setState({ suggestions: [] });
   }
 
   fetchSuggestions(term) {
