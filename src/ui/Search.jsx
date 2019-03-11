@@ -1,4 +1,5 @@
 const React = require('react');
+const Input = require('./Input.jsx');
 const Options = require('./Options.jsx');
 const config = require('../../config');
 const { api } = config;
@@ -27,7 +28,7 @@ class Search extends React.Component {
 
     return (
       <div>
-        <input type="text" onChange={ this.onChange } />
+        <Input onChange={ this.onChange } />
         { options }
       </div>
     );
